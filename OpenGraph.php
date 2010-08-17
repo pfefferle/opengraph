@@ -84,6 +84,7 @@ class OpenGraph implements Iterator
     $page = new self();
 
     foreach ($tags AS $tag) {
+      $matches = array();
       if ($tag->hasAttribute('property') &&
           preg_match('/(\s|^)og:(\S*)(\s|$)/i', $tag->getAttribute('property'), $matches)) {
         $key = strtr($matches[2], "-", "_");
